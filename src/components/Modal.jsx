@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import Select from "react-select";
-import { options } from "../utils/constant";
 import { useForm } from "../hooks/useForm";
 
 export const Modal = ({
@@ -45,12 +43,12 @@ export const Modal = ({
       <form className="popupBody" onSubmit={handleSubmit}>
         <div className="popup__top">
           <button
-            className="btn__popup btn__popup--cancel"
+            className="btn__popup--cancel btn__popup"
             onClick={closeModal}
           >
             Cancel
           </button>
-          <button type="submit" className="btn__popup btn__popup--add">
+          <button type="submit" className="btn__popup--add btn__popup">
             {selectedTodo ? "Save" : "Add"}
           </button>
         </div>
@@ -75,13 +73,6 @@ export const Modal = ({
             onChange={() => handleInputChange(event)}
             value={values.description}
           ></textarea>
-        </div>
-
-        <div className="task__end">
-          <h2 className="popup__title" style={{ marginBottom: "10px" }}>
-            Tags
-          </h2>
-          <Select options={options} isMulti />
         </div>
       </form>
     </div>
